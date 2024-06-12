@@ -3,40 +3,17 @@ using Microsoft.VisualBasic;
 
 class Program
 {
-  int Nature_Numbers(int M, int N)
-  {
-
-    if (M <= 0)
-    {
-      Nature_Numbers(M + 1, N);
-      return M;
-    }
-    else
-    {
-      if (M == N)
-      {
-        Console.WriteLine(M + " ");
-        return M;
-      }
-
-    }
-
-    Console.Write(M + " ");
-    Nature_Numbers(M + 1, N);
-
-    return M;
-  }
-
+ 
   static void Main(string[] args)
   {
-    string letter_A = "M";
-    string letter_B = "N";
+    string letterA = "M";
+    string letterB = "N";
     int m = 0;
     int n = 0;
     Program p = new Program();
 
-    m = p.Check_Input(letter_A);
-    n = p.Check_Input(letter_B);
+    m = p.CheckInput(letterA);
+    n = p.CheckInput(letterB);
 
     if (m == n)
     {
@@ -46,19 +23,19 @@ class Program
     {
       if (m > n)
       {
-        p.Nature_Numbers(n, m);
+        p.NatureNumbers(n, m);
       }
       else
       {
         if (m < n)
         {
-          p.Nature_Numbers(m, n);
+          p.NatureNumbers(m, n);
         }
       }
     }
   }
 
-  int Check_Input(string pL)
+  int CheckInput(string pL)
   {
     int n;
     double m = 0;
@@ -97,6 +74,30 @@ class Program
     }
     while (n <= 0);
     return n;
-
   }
+
+   int NatureNumbers(int M, int N)
+  {
+
+    if (M <= 0)
+    {
+      NatureNumbers(M + 1, N);
+      return M;
+    }
+    else
+    {
+      if (M == N)
+      {
+        Console.WriteLine(M + " ");
+        return M;
+      }
+
+    }
+
+    Console.Write(M + " ");
+    NatureNumbers(M + 1, N);
+
+    return M;
+  }
+
 }
